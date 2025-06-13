@@ -1,8 +1,10 @@
+import MyUser from './mongodbmodel/schema.js';
 
-const express = require('express');
-const cors = require('cors');
-const { connect } = require('mongoose');
-const MyUser = require('./mongodbconfig'); // Assuming this is the correct path to your model
+import express from 'express';
+import cors from 'cors';
+import connectToDatabase from './mongodbconfig.js';
+// const { connect } = require('mongoose');
+ // Assuming this is the correct path to your model
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -25,3 +27,5 @@ const port=3001;
 app.listen(port,()=>{
 console.log("server running on port",{port});
 });
+
+connectToDatabase();

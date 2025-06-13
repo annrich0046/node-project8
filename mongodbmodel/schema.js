@@ -1,11 +1,11 @@
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
 
-const BlogPost = new Schema({
+const UserSchema = new Schema({
   name: String,
   city: String,
   age : String
 });
 
 const MyUser = mongoose.model('User', UserSchema);
-module.exports = MyUser;
+export default MyUser;
